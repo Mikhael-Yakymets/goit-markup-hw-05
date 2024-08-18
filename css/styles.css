@@ -497,6 +497,7 @@ img {
 .footer-form {
   display: flex;
   align-items: center;
+  gap: 24px;
 }
 
 .footer-input {
@@ -510,15 +511,14 @@ img {
   width: 264px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  margin-right: 24px;
-  background-color: #2e2f42;
+  background-color: transparent;
   outline: none;
+  padding-left: 16px;
 }
 .footer-form-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -538,13 +538,17 @@ img {
   background-color: #404bbf;
 }
 
+.footer-form-btn-icon {
+  margin-left: 16px;
+}
+
 /* #endregion Footer */
 
 /* #region Modal Window */
 .backdrop {
   background-color: rgba(46, 47, 66, 0.4);
-  transition: visibility 300ms linear, opacity 300ms linear,
-    pointer-events 300ms linear;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -565,9 +569,10 @@ img {
   min-height: 584px;
   transform: translate(-50%, -50%);
   background-color: #fcfcfc;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 72px;
+  box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
 }
 
 .backdrop.is-open {
@@ -578,18 +583,20 @@ img {
 
 .modal-close-btn {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 24px;
   right: 24px;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: #e7e9fc;
   stroke-width: 1px;
-  border-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   width: 24px;
   height: 24px;
   line-height: 0;
   padding: 0;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -632,7 +639,9 @@ img {
   border: 1px solid rgba(46, 47, 66, 0.4);
   padding-left: 38px;
   outline: none;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  outline: transparent;
 }
 
 .modal-input:focus {
@@ -654,17 +663,14 @@ img {
 .form-wrapper-cont-comment {
   margin-bottom: 16px;
 }
-.modal-form-label-comment {
-  font-weight: 400;
+
+.modal-textarea {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: #8e8f99;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.modal-textarea {
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  outline: transparent;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   width: 360px;
@@ -672,7 +678,7 @@ img {
   resize: none;
   padding: 8px 16px;
   outline: none;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
 }
 
@@ -701,11 +707,17 @@ img {
   justify-content: center;
   align-items: center;
   margin-right: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: transparent;
 }
 
 .checkbox:checked + .custom-label-checkbox > .custom-checkbox {
   border-color: transparent;
   background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .custom-label-checkbox {
