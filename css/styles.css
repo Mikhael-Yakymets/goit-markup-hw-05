@@ -515,8 +515,17 @@ img {
   outline: none;
 }
 .footer-form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
   border-radius: 4px;
-  padding: 8px 24px;
   min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
@@ -527,20 +536,6 @@ img {
 .footer-form-btn:hover,
 .footer-form-btn:focus {
   background-color: #404bbf;
-}
-
-.footer-form-btn-text {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-align: center;
-  color: #fff;
-  margin-right: 16px;
-}
-
-.footer-form-btn-box {
-  display: flex;
 }
 
 /* #endregion Footer */
